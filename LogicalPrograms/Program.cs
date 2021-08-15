@@ -15,13 +15,14 @@ namespace LogicalPrograms
         public const int IS_DAY_OF_WEEK = 8;
         public const int IS_WENDING_MACHINE = 9;
         public const int IS_MONTHLY_PAYMENT = 10;
-        public const int IS_DECIMAL_TO_BINARY = 11;
+        public const int IS_NEWTONS_METHOD = 11;
+        public const int IS_DECIMAL_TO_BINARY = 12;
         public static void Main(string[] args)
         {
-            Console.WriteLine("Press 1 to 11 to run the Following programs !");
-            Console.WriteLine("1. Fibonacci Series\n2. Perfect Number\n3. Prime Number\n4.Reversing a Number\n5. Coupon Numbers\n6. Stop_Watch\n7. Temparature Conversion\n8. Day Of Week\n9. Vending Machine \n10. Monthly_Payemnt \n11. Decimel to binary\n");
-            while (choice != 12)
+            Console.WriteLine("1. Fibonacci Series\n2. Perfect Number\n3. Prime Number\n4.Reversing a Number\n5. Coupon Numbers\n6. Stop_Watch\n7. Temparature Conversion\n8. Day Of Week\n9. Vending Machine \n10. Monthly_Payemnt \n11. Newton's method \n12. Decimel to binary\n");
+            while (choice != 13)
             {
+                Console.WriteLine("Enter Your Choice: ");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -38,7 +39,6 @@ namespace LogicalPrograms
                         break;
                     case IS_PRIME:
                         Console.WriteLine("Prime Check");
-                        PrimeNumber primeNumber = new PrimeNumber();
                         PrimeNumber.Prime();
                         break;
 
@@ -50,17 +50,38 @@ namespace LogicalPrograms
 
                     case IS_COUPONS_NUMBER:
                         Console.WriteLine("Unique Coupon number");
-                        Coupons coupons = new Coupons();
                         Coupons.UniqueCoupons();
                         break;
 
-                    
+                    case IS_STOP_WATCH:
+                        StopWatch.Watch();
+                        break;
+                    case IS_TEMP_CONVERSION:
+                        TempConversion tempconversion = new TempConversion();
+                        tempconversion.Conversion();
+                        break;
+                    case IS_DAY_OF_WEEK:
+                        DayOfWeek dayOfWeek = new DayOfWeek();
+                        dayOfWeek.Day();
+                        break;
+                    case IS_WENDING_MACHINE:
+
+                        break;
+                    case IS_MONTHLY_PAYMENT:
+                        MonthlyPayment.Payment();
+                        break;
+                    case IS_NEWTONS_METHOD:
+                        NewtonsMethod.Sqrt();
+                        break;
+                    case IS_DECIMAL_TO_BINARY:
+                        DecimalToBinary.Binary();
+                        break;
+                   
                     default:
-                        Console.WriteLine("choose one more time");
+                        Console.WriteLine("Oops!!! Try Again.");
                         break;
                 }
             }
         }
-        
     }
 }
